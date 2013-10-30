@@ -1,0 +1,105 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="bg-glow">
+
+    <!--header-->
+    <header>
+        <div class="container">
+            <div class=row>
+                <article class="span12">
+                    <h1 class="brand">{{widget('companyheader', 'companyheader', {"defaultlogo": asset('/images/logo.png')})|raw}}</h1>
+                    <div class="nav-collapse nav-collapse_ collapse">
+                        {{widget('navigation', 'navigation', {'align': 'left'})|raw}}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </header>
+
+    <div class="global">
+
+        <section class="slider">
+            <div class="container">
+                <div class="row">
+                    <article class="span12"> 
+                        {{widget('responsiveslideshow', 'responsiveslideshow', {'duration':'3', 'transSpeed': '1000', 'transType': 'fade', 'showButtons': false, 'showBullets': 'true', 'allowPause': false, 'allowLoop': false, 'images':[{'imageHeight':'400', 'imageWidth':'1130', 'url':'http://placehold.it/1130x400', 'title':'test title', 'description': 'test desc'},{'imageHeight':'400', 'imageWidth':'1130', 'url':'http://placehold.it/1130x400', 'title':'test title', 'description': 'test desc'},{'imageHeight':'400', 'imageWidth':'1130', 'url':'http://placehold.it/1130x550', 'title':'test title', 'description': 'test desc'},{'imageHeight':'400', 'imageWidth':'1130', 'url':'http://placehold.it/1130x550', 'title':'test title', 'description': 'test desc'}]})|raw}}
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--content-->
+
+        <section class="">
+            <div class="container">
+                <div class="row">
+                    <article class="span4">                        
+                        {{widget('content', 'welcome_title', {content: '<h3>Welcome!</h3>', lines: 'all'})|raw}}
+                        <figure class="item_img">{{widget('image', 'welcome_item_img', { 'src': asset('/images/page1-img1.jpg'), 'alt': 'image', 'fileName': 'page1-img1.jpg', 'fileSize': '30kb', 'imageSize': '191 x 290', 'imageWidth': '290px'})|raw}}</figure>
+                        {{widget('content', 'welcome_content', {content: '<strong>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incid.</strong><p>Det ut labore et dolore magna aliqua. Ut enim ad ser minim veniam, quis nostrud exercitation ullamco ate laboris nisi ut aliquip ex ea commodo consequat lo. Duis aute irure dolor in reprehenderit in voluptate sre velit esse cillum dolore eu fugiat.</p>', lines: 'all'})|raw}}
+                        {{widget('button', 'welcome_button', {italic: false, text:'Read more', 'align':'widget-align-center'})|raw}}
+                        {{widget('space', 'space', {'height': '30'})|raw}}
+                    </article>
+                    <article class="span4">
+                        {{widget('content', 'about_title', {content: '<h3>About us</h3>', lines: 'all'})|raw}}
+                        <figure class="item_img">{{widget('image', 'about_item_img', { 'src': asset('/images/page1-img2.jpg'), 'alt': 'image', 'fileName': 'page1-img1.jpg', 'fileSize': '30kb', 'imageSize': '191 x 290', 'imageWidth': '290px'})|raw}}</figure>
+                        {{widget('content', 'about_content', {content: '<strong>Sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labo.</strong><p>Et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>', lines: 'all'})|raw}}
+                        {{widget('button', 'about_button', {italic: false, text:'Read more', 'align':'widget-align-center'})|raw}}
+                        {{widget('space', 'space', {'height': '30'})|raw}}
+                    </article>
+                    <article class="span4">
+                        {{widget('content', 'tweet_title', {content: '<h3>Latest Tweets</h3>', lines: 'all'})|raw}}
+                        {{widget('twitter', 'twitter', {'searchKey': 'basekit', 'searchType': 'username', 'count': '2','refreshTime': '1800000','includeRts': '0'})|raw}}
+                        {{widget('button', 'button3', {italic: false, text:'Read more', 'align':'widget-align-center'})|raw}}
+                        {{widget('space', 'space', {'height': '30'})|raw}}
+                    </article>
+                </div>
+
+                {{zone('main')|raw}}
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!--footer-->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <section class="span12">
+                    <div class="row">
+                        <article class="span8">
+                            {{widget('content', 'res', {content: '<span>Reservations:</span> 1(234) 5678-901', lines: 'all'})|raw}}
+                        </article>
+                        <article class="span4">
+                            {{widget('socialicons', 'socialicons', {'googleplus': 'https://plus.google.com/101946323226233111530', 'linkedin':'http://www.linkedin.com/company/basekit', 'facebook': 'https://www.facebook.com/TeamBaseKit', 'twitter': 'https://twitter.com/basekit', 'youtube': 'https://www.youtube.com/user/TeamBaseKit', 'rss': 'http://blogdiseno.basekit.es/feed/'})|raw}}
+                        </article>
+                    </div>
+                </section>
+
+                <article class="span12">
+                    <ul id="services">
+                        <li><a href="#">{{widget('content', 'welcome_title1', {content: 'Returns', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title2', {content: 'Delivery', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title3', {content: 'Customer Service', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title4', {content: 'Gift Cards', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title5', {content: 'Extended Service Plan', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title6', {content: 'New products', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title7', {content: 'Top sellers', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title8', {content: 'Specials', lines: 'all'})|raw}}</a></li>
+                        <li><a href="#">{{widget('content', 'welcome_title9', {content: 'Suppliers', lines: 'all'})|raw}}</a></li>
+                    </ul>
+                    {{widget('content', 'footercontent', {content: '<p>Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>', lines: 'all'})|raw}}
+                    <p class="copyright"><span class="sitename">Dellicio</span> &copy; 2013 &nbsp; &nbsp; <a href="index-5.html">Privacy Policy</a></p>
+                </article>
+            </div>
+        </div>
+    </footer>
+    
+</div>
+
+{% endblock %}
